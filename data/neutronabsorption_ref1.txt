@@ -1,0 +1,2 @@
+Wavelenght(Ang)	Li6F:ZnS(Ag)250um	Li6I:Eu250um 
+4.22	45.0	47.0
