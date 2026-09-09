@@ -44,9 +44,9 @@ if __name__ == '__main__':
     Helium3_1 = data_set2[:,1]
 
     data_set3 = np.loadtxt('neutronabsorption_ref1.txt',skiprows=1)
-    lambda_ang_2 = data_set3[:,0]
-    #LiF_2 = data_set3[:,1]
-    #LiI_2 = data_set3[:,2]
+    lambda_ang_2 = data_set3[0]
+    LiF_2 = data_set3[1]
+    LiI_2 = data_set3[2]
     
     # Set font to sans-serif for a scientific look
     plt.rcParams.update({
@@ -66,8 +66,8 @@ if __name__ == '__main__':
     ax.plot(lambda_ang,Helium3, label='3He 20atm and 0.5cm thickness. Data points from NIST)', marker=maker_style[1],linestyle='None',color=hex_colors_bw[1])
     ax.plot(lambda_ang,LiF, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from NIST)',marker=maker_style[2],linestyle='None',color=hex_colors_bw[2])
     ax.plot(lambda_ang_1,Helium3_1, label='3He 20atm. Data points from ASI Quotation)',marker=maker_style[3],linestyle='None',color=hex_colors_bw[3])
-    #ax.plot(lambda_ang_2,LiF_2, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from DOI )',marker=maker_style[4],linestyle='None',color=hex_colors_bw[4])
-    #ax.plot(lambda_ang_2,LiI_2, label='6LiI:Eu 250$\mu$m thickness. Data points from DOI )',marker=maker_style[5],linestyle='None',color=hex_colors_bw[5])
+    ax.plot(lambda_ang_2,LiF_2, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from DOI )',marker=maker_style[4],linestyle='None',color=hex_colors_bw[4])
+    ax.plot(lambda_ang_2,LiI_2, label='6LiI:Eu 250$\mu$m thickness. Data points from DOI )',marker=maker_style[5],linestyle='None',color=hex_colors_bw[5])
     
     # Add labels and title
     plt.xlabel('$\lambda$ (Ang)')
