@@ -30,6 +30,16 @@ hex_colors = [
     "#FCBBA1",
     "#FEE0D2"
     ]
+hex_colors_blue = [
+            "#08306b",
+            "#08519c",
+            "#2171b5",
+            "#4292c6",
+            "#6baed6",
+            "#9ecae1",
+            "#c6dbef",
+            "#deebf7"
+            ]
 
 if __name__ == '__main__':
 
@@ -61,20 +71,30 @@ if __name__ == '__main__':
         'lines.markersize': 6,
         'mathtext.fontset': 'cm',
     })
+
+    
+    
     # plot data
     fig1, ax = plt.subplots(figsize=(8, 8))
-    ax.plot(lambda_ang,Helium3, label='3He 20atm and 0.5cm thickness. Data points from NIST)', marker=maker_style[1],linestyle='None',color=hex_colors_bw[1])
-    ax.plot(lambda_ang,LiF, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from NIST)',marker=maker_style[2],linestyle='None',color=hex_colors_bw[2])
-    ax.plot(lambda_ang_1,Helium3_1, label='3He 20atm. Data points from ASI Quotation)',marker=maker_style[3],linestyle='None',color=hex_colors_bw[3])
-    ax.plot(lambda_ang_2,LiF_2, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from DOI )',marker=maker_style[4],linestyle='None',color=hex_colors_bw[4])
-    ax.plot(lambda_ang_2,LiI_2, label='6LiI:Eu 250$\mu$m thickness. Data points from DOI )',marker=maker_style[5],linestyle='None',color=hex_colors_bw[5])
+
+    # plot region of interest
+    plt.axvline(x=1, color=hex_colors_blue[5], linestyle='--')
+    plt.axvline(x=2, color=hex_colors_blue[5], linestyle='--')
     
+    ax.plot(lambda_ang,Helium3, label='3He 20atm and 0.5cm thickness. Data points from NIST', marker=maker_style[1],linestyle='None',color=hex_colors_bw[1])
+    ax.plot(lambda_ang,LiF, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from NIST',marker=maker_style[2],linestyle='None',color=hex_colors_bw[2])
+    ax.plot(lambda_ang_1,Helium3_1, label='3He 20atm. Data points from ASI Quotation',marker=maker_style[3],linestyle='None',color=hex_colors_bw[3])
+    ax.plot(lambda_ang_2,LiF_2, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from DOI',marker=maker_style[4],linestyle='None',color=hex_colors[2])
+    ax.plot(lambda_ang_2,LiI_2, label='6LiI:Eu 250$\mu$m thickness. Data points from DOI',marker=maker_style[5],linestyle='None',color=hex_colors[3])
+
+    
+
     # Add labels and title
     plt.xlabel('$\lambda$ (Ang)')
     plt.ylabel('Neutron Absorption (%)')
     plt.title('')
     plt.xlim(0,4.50) # X-axis from  to 
-    plt.ylim(0,120)  # Y-axis from  to 
+    plt.ylim(0,130)  # Y-axis from  to 
 
     # Scientific notation on both axes
     formatter = ScalarFormatter(useMathText=True)
