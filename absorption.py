@@ -1,4 +1,4 @@
-import numpy as np
+  import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import ScalarFormatter
 
@@ -78,6 +78,7 @@ if __name__ == '__main__':
     # plot region of interest
     plt.axvline(x=1, color=hex_colors_blue[5], linestyle='--')
     plt.axvline(x=2, color=hex_colors_blue[5], linestyle='--')
+    plt.axhline(y=50, color=hex_colors_bw[0], linestyle='--')
     
     ax.plot(lambda_ang,Helium3, label='3He 20atm and 0.5cm thickness. Data points from NIST', marker=maker_style[1],linestyle='None',color=hex_colors_bw[1])
     ax.plot(lambda_ang,LiF, label='6LiF:ZnS(Ag) 250$\mu$m thickness. Data points from NIST',marker=maker_style[2],linestyle='None',color=hex_colors_bw[2])
