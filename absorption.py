@@ -11,7 +11,7 @@ maker_style = [
                 'p',
                 'X',
                 'P',
-                'V'
+                'v'
                 
                 ]
 hex_colors_bw = [
@@ -49,10 +49,10 @@ if __name__ == '__main__':
     # load data
     data_set1 = np.loadtxt('neutronabsorption_NIST.txt',skiprows=1)
     lambda_ang = data_set1[:,0]
-    Helium3_NIST = data_set1[:,1]
-    LiF_NIST = data_set1[:,2]
-    LiF_NIST_2 = data_set1[:,3]
-    LiF_NIST_3 = data_set1[:,4]
+    Helium3_NIST = data_set1[:,1] #3He(20atm)5mm0.00251g/cm3
+    LiF_NIST = data_set1[:,2]   #Li6F:ZnS(Ag)450um(1:2)(0.44g/cm3)
+    LiF_NIST_2 = data_set1[:,3] #Li6F:ZnS(Ag)450um(1:3)(0.36g/cm3)
+    LiF_NIST_3 = data_set1[:,4] #Li6F:ZnS(Ag)250um(1:2)(0.44g/cm3)
 
     data_set2 = np.loadtxt('neutronabsorption_LDN.txt',skiprows=1)
     lambda_ang_1 = data_set2[:,0]
@@ -104,6 +104,8 @@ if __name__ == '__main__':
     #LiF
     ax.plot(lambda_ang,LiF_NIST, label='6LiF:ZnS(Ag)(1:2) 0.45mm thickness. Data points from NIST',marker=maker_style[2],linestyle='None',color=hex_colors[2])
     ax.plot(lambda_ang,LiF_NIST_2, label='6LiF:ZnS(Ag)(1:3) 0.45mm thickness. Data points from NIST',marker=maker_style[3],linestyle='None',color=hex_colors[3])
+    ax.plot(lambda_ang,LiF_NIST_3, label='6LiF:ZnS(Ag)(1:2) 0.25mm thickness. Data points from NIST',marker=maker_style[8],linestyle='None',color=hex_colors[5])
+    
     ax.plot(lambda_ang_3,LiF_3*100, label='6LiF:ZnS(Ag)(1:2) 0.45mm thickness. Data points from https://doi.org/10.1107/S1600576724002462',marker=maker_style[4],linestyle='None',color=hex_colors[4])
         
     ax.plot(lambda_ang_2,LiF_2, label='6LiF:ZnS(Ag) 0.25mm thickness. Data points from https://doi.org/10.1063/5.0189920',marker=maker_style[5],linestyle='None',color=hex_colors_blue[1])
