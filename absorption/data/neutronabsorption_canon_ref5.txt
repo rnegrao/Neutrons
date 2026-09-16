@@ -1,0 +1,2 @@
+Wavelenght(Ang)	3He(8atm)12.3mm0.000989g/cm3
+1.8	73.7
