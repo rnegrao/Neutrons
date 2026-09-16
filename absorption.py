@@ -47,31 +47,31 @@ hex_colors_blue = [
 if __name__ == '__main__':
 
     # load data
-    data_set1 = np.loadtxt('neutronabsorption_NIST.txt',skiprows=1)
+    data_set1 = np.loadtxt('data/neutronabsorption_NIST.txt',skiprows=1)
     lambda_ang = data_set1[:,0]
     Helium3_NIST = data_set1[:,1] #3He(20atm)5mm0.00251g/cm3
     LiF_NIST = data_set1[:,2]   #Li6F:ZnS(Ag)450um(1:2)(0.44g/cm3)
     LiF_NIST_2 = data_set1[:,3] #Li6F:ZnS(Ag)450um(1:3)(0.36g/cm3)
     LiF_NIST_3 = data_set1[:,4] #Li6F:ZnS(Ag)250um(1:2)(0.44g/cm3)
 
-    data_set2 = np.loadtxt('neutronabsorption_LDN.txt',skiprows=1)
+    data_set2 = np.loadtxt('data/neutronabsorption_LDN.txt',skiprows=1)
     lambda_ang_1 = data_set2[:,0]
     Helium3_1 = data_set2[:,1]
 
-    data_set3 = np.loadtxt('neutronabsorption_ref1.txt',skiprows=2) #timepix detector
+    data_set3 = np.loadtxt('data/neutronabsorption_ref1.txt',skiprows=2) #timepix detector
     lambda_ang_2 = data_set3[0]
     LiF_2 = data_set3[1]
     LiI_2 = data_set3[2]
 
-    data_set4 = np.loadtxt('neutron_detection_efficiency_SDX_detector_ref2.txt',skiprows=2) #isi SDX
+    data_set4 = np.loadtxt('data/neutron_detection_efficiency_SDX_detector_ref2.txt',skiprows=2) #isi SDX
     lambda_ang_3 = data_set4[:,0]
     LiF_3 = data_set4[:,1]
 
-    data_set5 = np.loadtxt('neutron_detection_efficiency_ref3.txt',skiprows=2) #chiness article 
+    data_set5 = np.loadtxt('data/neutron_detection_efficiency_ref3.txt',skiprows=2) #chiness article 
     lambda_ang_4 = data_set5[:,0]
     LiF_4 = data_set5[:,1]
 
-    data_set6 = np.loadtxt('neutronabsorption_ref4.txt',skiprows=2) # NIST article
+    data_set6 = np.loadtxt('data/neutronabsorption_ref4.txt',skiprows=2) # NIST article
     lambda_ang_5 = data_set6[0]
     LiF_5 = data_set6[1]
         
