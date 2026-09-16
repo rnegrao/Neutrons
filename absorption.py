@@ -134,4 +134,3 @@ if __name__ == '__main__':
     # Show the plot
     plt.tight_layout()
     plt.show()
-    
