@@ -20,7 +20,7 @@ Filenames:
 - NewFile8.csv
 
 Test: 3
-Radiation Source: U3O8 (Gamma) 7 muCi
+Radiation Source: U3O8 (Gamma) XX muCi 
 Detector: Reuter-Stokes (Aurora diffractometer)
 Voltage: +2000 V
 Filenames: 
